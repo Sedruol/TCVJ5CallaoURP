@@ -61,17 +61,17 @@ public class PlayerMovement : MonoBehaviour
         //-------------------------
         //Rigidbody.MovePosition
         //-------------------------
-        //Vector3 movementDirection = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        //rb.MovePosition(rb.position + movementDirection.normalized * speed * Time.deltaTime);
-        //if (movementDirection != Vector3.zero)
-        //{
-        //    animator.SetBool("IsRunning", true);
-        //    transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movementDirection), speedRotation * Time.deltaTime);
-        //}
-        //else
-        //{
-        //    animator.SetBool("IsRunning", false);
-        //}
+        Vector3 movementDirection = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        rb.MovePosition(rb.position + movementDirection.normalized * speed * Time.deltaTime);
+        if (movementDirection != Vector3.zero)
+        {
+            animator.SetBool("IsRunning", true);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movementDirection), speedRotation * Time.deltaTime);
+        }
+        else
+        {
+            animator.SetBool("IsRunning", false);
+        }
 
         //-------------------------
         //CharacterController

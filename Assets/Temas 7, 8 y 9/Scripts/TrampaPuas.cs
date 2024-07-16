@@ -9,7 +9,10 @@ public class TrampaPuas : MonoBehaviour
     private float time;
     private void OnTriggerEnter(Collider other)
     {
-        time = 0f;
+        if (other.gameObject.CompareTag("Player"))
+        {
+            time = 0f;
+        }
     }
     private void OnTriggerStay(Collider other)
     {
@@ -27,6 +30,9 @@ public class TrampaPuas : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        time = 0f;
+        if (other.gameObject.CompareTag("Player"))
+        {
+            time = 0f;
+        }
     }
 }

@@ -11,8 +11,8 @@ public class NavMeshController : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        agent.destination = objective.position;
-        //enemy = GameObject.FindGameObjectWithTag("Enemy");
+        //agent.destination = objective.position;
+        enemy = GameObject.FindGameObjectWithTag("Enemy");
         //agent.destination = enemy.transform.position;
     }
 
@@ -20,6 +20,7 @@ public class NavMeshController : MonoBehaviour
     void Update()
     {
         //agent.destination = objective.position;
+        agent.SetDestination(enemy.transform.position);
         //agent.destination = enemy.transform.position;
     }
 }

@@ -9,8 +9,9 @@ public class PlayerMoveV2 : MonoBehaviour
     [SerializeField] Transform parentBullet;//objeto donde almacenaremos todas las balas
     [SerializeField] float velocityBullet;//velocidad de las balas
     public static int playerHP = 100;
+    public SkinnedMeshRenderer skinnedMesh;
     public MeshRenderer meshRenderer;
-    public Material material;
+    public Material newMaterial;
     public static float timeToShoot = 0.2f;
     private float time;
     private Rigidbody rb;
@@ -58,7 +59,6 @@ public class PlayerMoveV2 : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Modificators"))
         {
-            Debug.Log("entre");
             switch (other.name)
             {
                 case "DoubleDamage":
@@ -69,9 +69,11 @@ public class PlayerMoveV2 : MonoBehaviour
                     break;
                 case "ChangeMaterial":
                     Debug.Log("mat");
-                    meshRenderer.material = material;
+                    skinnedMesh.material = newMaterial;
+                    meshRenderer.material = newMaterial;
                     break;
             }
+            Destroy(other.gameObject);
         }
         else if (other.gameObject.CompareTag("Tramps"))
         {
@@ -79,9 +81,9 @@ public class PlayerMoveV2 : MonoBehaviour
             {
                 case "Reduccion de Daño":
                     BulletV2.damage /= 2;
+                    Destroy(other.gameObject);
                     break;
             }
         }
-        Destroy(other.gameObject);
     }
 }

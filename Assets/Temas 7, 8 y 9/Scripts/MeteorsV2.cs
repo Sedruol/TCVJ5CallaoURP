@@ -23,7 +23,7 @@ public class MeteorsV2 : MonoBehaviour
 
     void Update()
     {
-        if (PlayerMoveV2.playerHP >= 0)
+        if (PlayerMoveV2.playerHP > 0)
             CreateMeteors();
     }
 }

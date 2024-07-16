@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 214511556}
   m_Layer: 0
   m_Name: Ceiling
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -332,7 +332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &346658870
 Transform:
   m_ObjectHideFlags: 0
@@ -377,7 +377,6 @@ GameObject:
   - component: {fileID: 404692706}
   - component: {fileID: 404692705}
   - component: {fileID: 404692709}
-  - component: {fileID: 404692710}
   - component: {fileID: 404692711}
   m_Layer: 0
   m_Name: Player
@@ -481,24 +480,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &404692710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 404692704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 999c888ab1d766a4ea667978ca933a20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inBullet: {fileID: 117357652}
-  bullet: {fileID: 4199210482047622540, guid: 5f112554bb839214aa76d448e4067842, type: 3}
-  parentBullet: {fileID: 1451997935}
-  velocityBullet: 750
-  poolBullets: 10
-  bullets: []
 --- !u!114 &404692711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,8 +496,9 @@ MonoBehaviour:
   bullet: {fileID: 4199210482047622540, guid: 5f112554bb839214aa76d448e4067842, type: 3}
   parentBullet: {fileID: 1451997935}
   velocityBullet: 750
+  skinnedMesh: {fileID: 0}
   meshRenderer: {fileID: 404692706}
-  material: {fileID: 2100000, guid: bb16f1673bb5c01468dc4e297af3b369, type: 2}
+  newMaterial: {fileID: 2100000, guid: f766334f62ab4ec49b05470b46127036, type: 2}
 --- !u!1 &569771979
 GameObject:
   m_ObjectHideFlags: 0
@@ -1544,7 +1526,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &2011908273
 AudioSource:
   m_ObjectHideFlags: 0
